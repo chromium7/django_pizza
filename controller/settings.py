@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Local
+    'shop.apps.ShopConfig',
     'menu.apps.MenuConfig',
     # 3rd party
     'debug_toolbar',
