@@ -140,6 +140,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Redis config
+
+REDIS_HOST = 'redis'
+REDIS_PORT = 6379
+REDIS_DB = 0
+
+
 
 # Django debug toolbar
 if DEBUG:
@@ -172,4 +179,3 @@ if DEBUG:
         'SHOW_TOOLBAR_CALLBACK': lambda request: True
     }
 
-    
