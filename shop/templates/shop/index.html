@@ -20,4 +20,34 @@
             </div>
         </div>
     </div>
+    <div class="home-container">
+        <section>
+            <div class="top">
+                <div class="wrap">
+                    <img src="{% static 'img/delivery.png' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Free delivery</h3>
+                    <p>30 Minutes Delivery Guaranteed</p>
+                </div>
+            </div>
+            <div class="bottom">
+                <a href="{% url 'menu:index' %}">Shop now</a>
+            </div>
+        </section>
+        <section>
+            <div class="top">
+                <div class="wrap">
+                    <img src="{% static 'img/pizza.png' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Best deal</h3>
+                    <p>Get awesome discounts</p>
+                </div>
+            </div>
+            <div class="bottom">
+                <a href="{% url 'menu:index' %}">Shop now</a>
+            </div>
+        </section>
+    </div>
 {% endblock content %}

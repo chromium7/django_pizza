@@ -6,6 +6,16 @@
   box-sizing: border-box;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: wheat;
+  }
+}
+
 @import "variable";
 
 @import "layout/header", "layout/footer";

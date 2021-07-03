@@ -6,6 +6,17 @@
           box-sizing: border-box;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: wheat;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -42,17 +53,6 @@ nav ul li {
   margin: 18px;
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  -webkit-transition: color 0.2s ease;
-  transition: color 0.2s ease;
-}
-
-nav ul li a:hover {
-  color: wheat;
-}
-
 footer {
   height: 40px;
   width: 100%;
@@ -67,11 +67,6 @@ footer {
           align-items: center;
   background-color: maroon;
   font-family: "Fjalla One", sans-serif;
-}
-
-footer a {
-  color: white;
-  text-decoration: none;
 }
 
 .header {
@@ -165,6 +160,102 @@ footer a {
 
 .header .title:nth-child(3) {
   color: #f1c83c;
+}
+
+.home-container {
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.home-container section {
+  width: 47%;
+  height: 260px;
+}
+
+.home-container section .top {
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home-container section .top .wrap {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-container section .top .wrap img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.home-container section .top .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-container section .top h3 {
+  font-family: "Fjalla One", sans-serif;
+}
+
+.home-container section:nth-child(1) {
+  background: #2b9f5e;
+}
+
+.home-container section:nth-child(2) {
+  background: #f1c83c;
+}
+
+.home-container section .bottom {
+  height: 30%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-container section .bottom a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background: maroon;
+  text-align: center;
 }
 
 .container {

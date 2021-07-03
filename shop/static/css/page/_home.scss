@@ -75,3 +75,69 @@
     }
   }
 }
+
+.home-container {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  section {
+    width: 47%;
+    height: 260px;
+
+    .top {
+      height: 70%;
+      display: flex;
+
+      .wrap {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 6rem;
+          height: 6rem;
+        }
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h3 {
+        font-family: "Fjalla One", sans-serif;
+      }
+    }
+
+    &:nth-child(1) {
+      background: $green;
+    }
+
+    &:nth-child(2) {
+      background: $yellow;
+    }
+
+    .bottom {
+      height: 30%;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        background: maroon;
+        text-align: center;
+      }
+    }
+  }
+}
