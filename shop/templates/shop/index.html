@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
-    Shop
+    Pizza Shop
 {% endblock title %}
 
 {% block content %}
-<h1>SHOP PAGE</h1>
+    <div class="header">
+        <div class="image-wrap">
+            <img src="{% static 'img/pizza-header.jpg' %}" alt="">
+        </div>
+        <div class="title-container">
+            <div class="title-background">
+                <h1>
+                    <span class="title">Pizzarino</span>
+                    <span class="title">The best</span>
+                    <span class="title">pizza ever</span>
+                </h1>
+            </div>
+        </div>
+    </div>
 {% endblock content %}

@@ -1,0 +1,33 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 65px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: maroon;
+  font-family: "Fjalla One", sans-serif;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      margin: 18px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: wheat;
+        }
+      }
+    }
+  }
+}

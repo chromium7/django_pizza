@@ -1,5 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import "variable";
+
+@import "layout/header", "layout/footer";
+
+@import "page/home";
+
+.container {
+  margin: 65px auto 0;
+  max-width: 1200px;
+  min-height: calc(100vh - 65px - 40px);
 }

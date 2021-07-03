@@ -1,0 +1,14 @@
+footer {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: maroon;
+  font-family: "Fjalla One", sans-serif;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
