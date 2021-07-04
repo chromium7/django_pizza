@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Local
     'shop.apps.ShopConfig',
     'menu.apps.MenuConfig',
+    'user.apps.UserConfig',
     # 3rd party
 ]
 
