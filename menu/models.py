@@ -11,6 +11,8 @@ from django.db import models
 class ToppingType(models.Model):
     name = models.CharField(max_length=32)
     
+    def __str__(self):
+        return self.name
 
 class Topping(models.Model):
     name = models.CharField(max_length=32)
@@ -18,7 +20,7 @@ class Topping(models.Model):
     type = models.ForeignKey(ToppingType, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.name.capitalise()} costs ${self.price}"
+        return f"{self.name.capitalize()}: ${self.price}"
 
 
 class Pizza(models.Model):    
