@@ -5,8 +5,8 @@
 The first thing to do is to clone the repository:
 
 ```sh
-$ git clone https://github.com/gocardless/sample-django-app.git
-$ cd sample-django-app
+$ git clone https://github.com/chromium7/django_pizza.git
+$ cd django_pizza
 ```
 
 Build the container with docker-compose

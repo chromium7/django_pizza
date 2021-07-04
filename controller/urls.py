@@ -25,8 +25,8 @@ urlpatterns = [
     path('', include('shop.urls', namespace="shop")),
 ]
 
-if settings.DEBUG:
+if settings.DEBUG or settings.TESTING_MODE:
     import debug_toolbar
-    urlpatterns += [url(r'^__debug__/', include(debug_toolbar.urls))]
+    urlpatterns += [url('__debug__/', include(debug_toolbar.urls))]
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
