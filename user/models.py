@@ -30,7 +30,8 @@ class Order(models.Model):
         ordering = ('created',)
 
     def __str__(self):
-        return f"{self.buyer} ordered {self.pizza}"
+        pizza = ", ".join(str(pizza) for pizza in self.pizza.all())
+        return f"{self.buyer} ordered {pizza}"
 
     def get_absolute_url(self):
         return reverse("user:order", args=[self.id])

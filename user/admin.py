@@ -7,4 +7,8 @@ class AddressAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['id', 'buyer', 'address', 'price', 'created', 'active']
+    list_filter = ['active']
+    search_fields = ['buyer']
+    date_hierarchy = 'created'
+    ordering = ['active', 'created']
