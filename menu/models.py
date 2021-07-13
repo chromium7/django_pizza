@@ -20,7 +20,7 @@ class Topping(models.Model):
     type = models.ForeignKey(ToppingType, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.name.capitalize()}: ${self.price}"
+        return f"{self.name.capitalize()} costs ${self.price}"
 
 
 class Pizza(models.Model):    
