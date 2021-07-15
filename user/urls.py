@@ -5,4 +5,5 @@ app_name = 'user'
 
 urlpatterns = [
     path('order/<int:id>/', views.order_detail, name="order"),
+    path('register/', views.register, name="register"),
 ]
