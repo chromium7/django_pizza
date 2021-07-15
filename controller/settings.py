@@ -142,6 +142,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Authentication
+LOGIN_REDIRECT_URL = 'shop:home'
+LOGIN_URL = 'user:login'
+LOGOUT_URL = 'user:logout'
+
 # Redis config
 
 REDIS_HOST = 'redis'

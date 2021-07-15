@@ -27,4 +27,4 @@ def register(request):
     else:
         user_form = UserRegistrationForm(prefix="user_form")       
         address_form = AddressRegistrationForm(prefix="address_form")
-    return render(request, 'user/register.html', {'user_form': user_form, 'address_form': address_form})
+    return render(request, 'registration/register.html', {'user_form': user_form, 'address_form': address_form})
