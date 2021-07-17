@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.username }} Profile{% endblock title %}
+
+{% block content %}
+    <section>
+        <h1>Profile</h1>
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Total orders: {{ orders.count }}</p>
+    </section>
+    <section>
+        <h3>Orders</h3>
+        {% for order in orders %}
+            <div>
+                <h5>Order #{{ order.id }}</h5>
+                <p>{{ order.created_at|date:"M d, Y" }}</p>
+                <p>Items ordered:</p>
+                <ul>
+                    {% for pizza in order.pizza.all %}
+                        <li>Size: {{ pizza.size }}</li>
+                        <li>Price: ${{ pizza.price }}</li>
+                        {% for topping in pizza.toppings.all %}
+                            <li>{{ topping.name }}: ${{ topping.price }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+                <p>Total cost: ${{ order.price }}</p>
+            </div>
+            <hr>
+        {% empty %}
+            <p>No orders yet.</p>
+        {% endfor %}
+    </section>
+
+{% endblock content %}

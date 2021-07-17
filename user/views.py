@@ -1,16 +1,19 @@
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect, render, get_object_or_404
+from django.urls import reverse
 from user.forms import AddressRegistrationForm, UserRegistrationForm
-from django.shortcuts import redirect, render, reverse, get_object_or_404
-
 from .models import Order
 
+@login_required
 def profile(request):
     user = request.user
     orders = Order.objects.filter(buyer=user)
-    return render(request, 'user/orders.html', {'orders': orders})
+    return render(request, 'user/profile.html', {'orders': orders})
 
 
 def order_detail(request, id):
-    order = get_object_or_404(Order, id=id, buyer=request.user)
+    order = get_object_or_404(Order, id=id)
+    order = order.filter(buyer=request.user)
     return render(request, 'user/order.html', {'order': order})
 
 
