@@ -7,19 +7,9 @@
         <h1>Register</h1>
         <form action="{% url 'user:register' %}" method="post">
             {% csrf_token %}
-            <div>{{ user_form.username.label_tag }}</div>
-            <div>{{ user_form.username }}</div>
-            <div>{{ user_form.first_name.label_tag }}</div>
-            <div>{{ user_form.first_name }}</div>
-            <div>{{ user_form.email.label_tag }}</div>
-            <div>{{ user_form.email }}</div>
-            <div>{{ user_form.password.label_tag }}</div>
-            <div>{{ user_form.password }}</div>
-            <div>{{ user_form.password2.label_tag }}</div>
-            <div>{{ user_form.password2 }}</div>
+            {{user_form.as_p}}
             <h2>Address details</h2>
-            <div>{{ address_form.street.label_tag }}</div>
-            <div>{{ address_form.street }}</div>
+            {{address_form.as_p}}
             <div><input type="submit" value="Register"></div>
         </form>
     </div>

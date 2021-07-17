@@ -17,6 +17,10 @@ a:hover {
   color: wheat;
 }
 
+input {
+  display: block;
+}
+
 nav {
   position: fixed;
   top: 0;

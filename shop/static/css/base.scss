@@ -16,6 +16,10 @@ a {
   }
 }
 
+input {
+  display: block;
+}
+
 @import "variable";
 
 @import "layout/header", "layout/footer";
