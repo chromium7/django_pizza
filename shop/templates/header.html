@@ -3,7 +3,7 @@
         <li><a href="{% url 'shop:home' %}">Home</a></li>
         <li><a href="{% url 'menu:index' %}">Menu</a></li>
         {% if user.is_authenticated %}
-            <li><a href="#">Cart (0)</a></li>
+            <li><a href="#">Cart ({{ cart|length }})</a></li>
             <li><a href="{% url 'user:profile' %}">{{ user.username }}</a></li>
             <li><a href="{% url 'user:logout' %}">Logout</a></li>
         {% else %}

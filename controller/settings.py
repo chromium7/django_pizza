@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'menu.apps.MenuConfig',
     'user.apps.UserConfig',
+    'cart.apps.CartConfig'
     # 3rd party
 ]
 
@@ -69,6 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart',
+
             ],
         },
     },
@@ -147,6 +150,10 @@ LOGIN_REDIRECT_URL = 'shop:home'
 LOGOUT_REDIRECT_URL = 'user:login'
 LOGIN_URL = 'user:login'
 LOGOUT_URL = 'user:logout'
+
+# Session 
+CART_SESSION_ID = 'cart'
+
 
 # Redis config
 
