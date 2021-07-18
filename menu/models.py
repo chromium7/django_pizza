@@ -36,7 +36,7 @@ class Pizza(models.Model):
         else:
             size = 'Large'
         toppings = ", ".join([topping.name for topping in self.toppings.all()])
-        return f"{size} pizza with {toppings} costs ${self.total_price()}"
+        return f"{size} pizza with {toppings}"
 
     def total_price(self):
         toppings_price = sum([topping.price for topping in self.toppings.all()])
