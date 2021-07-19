@@ -1,3 +1,0 @@
-
-class SessionDict(dict):
-    pass

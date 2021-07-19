@@ -4,7 +4,10 @@ from django.conf import settings
 from menu.tests.factories import PizzaFactory
 
 from ..cart import Cart
-from .helpers import SessionDict
+
+class SessionDict(dict):
+    pass
+
 
 class CartObjectTest(TestCase):
     def setUp(self):
