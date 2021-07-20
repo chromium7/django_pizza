@@ -262,6 +262,28 @@ footer {
   text-align: center;
 }
 
+.topping-checkbox {
+  list-style-type: none;
+}
+
+.topping-checkbox li {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.topping-checkbox ul {
+  list-style-type: none;
+}
+
+.topping-checkbox ul li {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.topping-checkbox ul li input[type="checkbox"] {
+  display: inline-block;
+}
+
 .container {
   margin: 65px auto 0;
   max-width: 1200px;
