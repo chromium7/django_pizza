@@ -13,7 +13,7 @@ class PizzaModelTest(TestCase):
         self.assertIn(self.tomato, self.sauce.topping_set.all())
 
     def test_pizza_string(self):
-        self.assertEqual(str(self.small_pizza), "Small pizza with tomato")
+        self.assertEqual(str(self.small_pizza), "Tomato (Small)")
 
     def test_pizza_base_price(self):
         self.assertEqual(self.small_pizza.total_price(), 5)

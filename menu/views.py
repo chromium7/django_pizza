@@ -83,7 +83,7 @@ def create_order(request):
         order.pizza.add(*[item['product'] for item in cart])
         order.save()
         cart.clear()
-        return redirect('user:profile')
+        return redirect('menu:order_created')
 
 
 def order_created(request):

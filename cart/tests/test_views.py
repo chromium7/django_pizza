@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.test import TestCase
 
 from menu.tests.factories import PizzaFactory
@@ -6,6 +7,8 @@ class CartViewTest(TestCase):
     
     def setUp(self) -> None:
         self.pizza = PizzaFactory()
+        self.user = User.objects.create_user(username='testuser', password='password')
+        self.client.login(username='testuser', password='password')
 
     def test_cart_view_renders_cart_template(self):
         response = self.client.get('/cart/')
