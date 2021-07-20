@@ -27,3 +27,13 @@ class AddressRegistrationForm(forms.ModelForm):
         widgets = {
             'street': TextInput
         }
+
+
+class AddressSelectForm(forms.Form):
+    address = forms.ModelChoiceField(queryset=Address.objects.none(), empty_label=None)
+
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user')
+        super(AddressSelectForm, self).__init__(*args, **kwargs)
+        qs = Address.objects.filter(user=user)
+        self.fields['address'].queryset = qs

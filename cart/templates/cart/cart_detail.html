@@ -38,6 +38,28 @@
                 </tr>
             {% endwith %}
             {% endfor %}
-        </table>    
-    {% endif %}            
+            <tr>
+                <td>Total</td>
+                <td colspan="3"></td>
+                <td>${{ cart.get_total_price }}</td>
+            </tr>
+        </table>
+
+        <div>
+            <h3>Clear cart</h3>
+            <form action="{% url 'cart:clear' %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Clear">
+            </form>
+        </div>
+
+        <form action="{% url 'menu:order' %}" method="post">
+            {% csrf_token %}
+            <div>
+                <h2>Choose your address</h2>
+                {{ address_form }}
+            </div>
+            <input type="submit" value="Create order">
+        </form>
+    {% endif %}
 {% endblock content %}

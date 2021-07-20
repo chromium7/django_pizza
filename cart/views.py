@@ -4,6 +4,7 @@ from django.views.decorators.http import require_POST
 from .cart import Cart
 from .forms import CartAddProductForm
 
+from user.forms import AddressSelectForm
 from menu.models import Pizza
 
 def cart_detail(request):
@@ -13,7 +14,8 @@ def cart_detail(request):
             'quantity': item['quantity'],
             'override': True
         })
-    return render(request, 'cart/cart_detail.html', {'cart': cart})
+    address_form = AddressSelectForm(user=request.user)
+    return render(request, 'cart/cart_detail.html', {'cart': cart, 'address_form': address_form})
 
 
 @require_POST
@@ -32,4 +34,11 @@ def cart_remove(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Pizza, id=product_id)
     cart.remove(product)
+    return redirect('cart:detail')
+
+
+@require_POST
+def cart_clear(request):
+    cart = Cart(request)
+    cart.clear()
     return redirect('cart:detail')

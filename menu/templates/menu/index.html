@@ -10,8 +10,11 @@
             {{error_message}}
         </div>
     {% endif %}
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
     <form action="{% url 'menu:add' %}" method="post">
-        <div>pizza</div>
+        <h3>Customize your pizza</h3>
         {{ pizza_form.as_p }}
         <hr>
         {{ cart_form.as_p }}

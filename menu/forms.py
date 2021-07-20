@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Pizza, Topping, ToppingType
+from .models import Pizza, Topping
 
 PIZZA_SIZE_CHOICES = [
     ('s', 'Small ($4)'),

@@ -3,7 +3,7 @@ from .models import Address, Order
 
 @admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['street', 'user']
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
