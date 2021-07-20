@@ -6,7 +6,7 @@
 """
 
 from django.db import models
-
+from django.contrib.postgres.fields import ArrayField
 
 class ToppingType(models.Model):
     name = models.CharField(max_length=32)
@@ -27,6 +27,7 @@ class Pizza(models.Model):
     size = models.CharField(max_length=1)
     price = models.IntegerField()
     toppings = models.ManyToManyField(Topping)
+    toppings_array = ArrayField(base_field=models.CharField(max_length=64), blank=True, null=True)
 
     def __str__(self):
         if self.size == 's':

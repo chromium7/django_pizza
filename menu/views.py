@@ -41,9 +41,15 @@ def add_to_cart(request):
                 'error_message': 'Pizza size is invalid',
             })
         
-        pizza = Pizza.objects.create(size=size, price=price)
-        pizza.toppings.add(*pizza_data['toppings'])
-        pizza.save()
+        toppings_name = [topping.name for topping in pizza_data['toppings']]
+
+        try:
+            # Get pizza object
+            pizza = Pizza.objects.get(size=size, price=price, toppings_array=toppings_name)
+        except Pizza.DoesNotExist:
+            pizza = Pizza.objects.create(size=size, price=price, toppings_array=toppings_name)
+            pizza.toppings.add(*pizza_data['toppings'])
+            pizza.save()
 
         # Add pizza to the cart
         cart = Cart(request)
