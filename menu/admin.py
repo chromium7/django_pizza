@@ -13,7 +13,8 @@ class PizzaAdmin(admin.ModelAdmin):
 
 @admin.register(Topping)
 class ToppingAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'price', 'type']
+    ordering = ['type', 'name']
 
 
 @admin.register(ToppingType)

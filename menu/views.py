@@ -4,7 +4,7 @@ from django.views.decorators.http import require_POST
 from cart.cart import Cart
 from cart.forms import CartAddProductForm
 
-from .models import Pizza
+from .models import Pizza, Topping
 from .forms import PizzaForm
 
 def index(request):
@@ -40,15 +40,16 @@ def add_to_cart(request):
                 'cart_form': cart_form,
                 'error_message': 'Pizza size is invalid',
             })
-        
-        toppings_name = [topping.name for topping in pizza_data['toppings']]
+        topping_ids = [int(id) for id in pizza_data['toppings']]
+        toppings = Topping.objects.filter(pk__in=topping_ids)
+        toppings_name = [topping.name for topping in toppings]
 
         try:
             # Get pizza object
             pizza = Pizza.objects.get(size=size, price=price, toppings_array=toppings_name)
         except Pizza.DoesNotExist:
             pizza = Pizza.objects.create(size=size, price=price, toppings_array=toppings_name)
-            pizza.toppings.add(*pizza_data['toppings'])
+            pizza.toppings.add(*toppings)
             pizza.save()
 
         # Add pizza to the cart

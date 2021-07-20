@@ -11,7 +11,9 @@
         </div>
     {% endif %}
     <form action="{% url 'menu:add' %}" method="post">
+        <div>pizza</div>
         {{ pizza_form.as_p }}
+        <hr>
         {{ cart_form.as_p }}
         {% csrf_token %}
         <input type="submit" value="Add to cart">
