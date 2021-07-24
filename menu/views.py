@@ -27,6 +27,8 @@ def index(request):
 
 @require_POST
 def add_to_cart(request):
+    if not request.user.is_authenticated:
+        return redirect('user:login')
     pizza_form = PizzaForm(request.POST)
     cart_form = CartAddProductForm(request.POST)
     if pizza_form.is_valid() and cart_form.is_valid():
@@ -72,6 +74,8 @@ def add_to_cart(request):
 
 @require_POST
 def create_order(request):
+    if not request.user.is_authenticated:
+        return redirect('user:login')
     cart = Cart(request)
     address_form = AddressSelectForm(request.POST, user=request.user)
     if address_form.is_valid():
