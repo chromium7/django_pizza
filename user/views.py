@@ -1,13 +1,21 @@
+from django.core.cache import cache
 from django.contrib.auth.decorators import login_required
+from django.db.models import Prefetch
 from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse
+
 from user.forms import AddressRegistrationForm, UserRegistrationForm
+
 from .models import Order
 
 @login_required
 def profile(request):
     user = request.user
-    orders = Order.objects.filter(buyer=user)
+    if cache.get(f'{user.id}:profile'):
+        orders = cache.get(f'{user.id}:profile')
+    else:
+        orders = Order.objects.filter(buyer=user).prefetch_related('pizza__toppings')
+        cache.set(f'{user.id}:profile', orders)
     return render(request, 'user/profile.html', {'orders': orders})
 
 

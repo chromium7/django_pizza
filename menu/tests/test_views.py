@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from cart.forms import CartAddProductForm
-from .factories import ToppingFactory, PizzaFactory
+from .factories import ToppingFactory
 from ..forms import PizzaForm
 
 class PizzaViewTest(TestCase):
